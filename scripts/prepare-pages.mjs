@@ -1,10 +1,22 @@
-import { cpSync, mkdirSync, rmSync } from 'node:fs';
+import {
+  cpSync,
+  mkdirSync,
+  rmSync,
+  readFileSync,
+  writeFileSync,
+} from 'node:fs';
 
 const output = 'pages-build';
 
 rmSync(output, { recursive: true, force: true });
 mkdirSync(output, { recursive: true });
 
-cpSync('index.html', `${output}/index.html`);
+const html = readFileSync('index.html', 'utf8');
+
+writeFileSync(
+  `${output}/index.html`,
+  html.replace('./dist/main.js', './assets/main.js'),
+);
+
 cpSync('style.css', `${output}/style.css`);
-cpSync('dist', `${output}/dist`, { recursive: true });
+cpSync('dist', `${output}/assets`, { recursive: true });
