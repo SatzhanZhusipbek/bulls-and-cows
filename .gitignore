@@ -1,3 +1,6 @@
+dist/
+pages-build/
+
 # Logs
 logs
 *.log
