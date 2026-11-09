@@ -2,11 +2,6 @@ import { describe, it, expect } from 'vitest';
 import { generateSecret } from '../src/game/generateSecret';
 import { createDigitValidator } from '../src/game/createDigitValidator';
 
-//Возвращаемая строка имеет правильную длину.
-//Все цифры уникальны.
-//Все цифры допустимы для выбранной системы счисления.
-//Функция работает с двоичной, восьмеричной, десятичной и шестнадцатеричной системами.
-//При одинаковой последовательности случайных чисел результат одинаков — это проверка детерминированности.
 describe('generateSecret', () => {
   it('generates a secret with the correct length', () => {
     const generatedSecret = generateSecret(4, 10);
