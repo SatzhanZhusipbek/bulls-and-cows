@@ -10,7 +10,9 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "prepare": "husky"
+    "prepare": "husky",
+    "predeploy": "npm run build && node scripts/prepare-pages.mjs",
+    "deploy": "gh-pages -d pages-build"
   },
   "repository": {
     "type": "git",
@@ -28,6 +30,7 @@
     "@eslint/js": "^10.0.1",
     "eslint": "^10.14.0",
     "eslint-config-prettier": "^10.1.8",
+    "gh-pages": "^6.3.0",
     "globals": "^17.14.0",
     "husky": "^9.1.7",
     "lint-staged": "^17.6.0",
