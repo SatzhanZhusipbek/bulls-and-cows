@@ -1,4 +1,4 @@
-import type { GameState, GuessEntry } from './types';
+import type { GameState, GuessEntry } from './types.js';
 
 export function addGuessToHistory(
   state: GameState,

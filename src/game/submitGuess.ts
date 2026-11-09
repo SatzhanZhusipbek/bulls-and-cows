@@ -1,7 +1,7 @@
-import { isValidGuess } from './isValidGuess';
-import { evaluateGuess } from './evaluateGuess';
-import { addGuessToHistory } from './addGuessToHistory';
-import type { GameState } from './types';
+import { isValidGuess } from './isValidGuess.js';
+import { evaluateGuess } from './evaluateGuess.js';
+import { addGuessToHistory } from './addGuessToHistory.js';
+import type { GameState } from './types.js';
 
 export function submitGuess(
   state: GameState,
